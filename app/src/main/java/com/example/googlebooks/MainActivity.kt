@@ -129,7 +129,9 @@ fun BooksScreen(
             items(results, key = { it.id }) { item ->
                 BookRow(
                     item = item,
-                    onClick = {}
+                    onClick = {
+                        context.startActivity(DetailActivity.newIntent(context, item))
+                    }
                 )
             }
         }
